@@ -1,0 +1,64 @@
+[
+    {
+        "main": [
+            {
+                "name": "Dashboard",
+                "slug": "dashboard",
+                "icon": "<MdDashboard/>"
+            },
+            {
+                "name": "Inventory",
+                "slug": "inventory",
+                "icon": "<MdInventory/>"
+            },
+            {
+                "name": "Reports",
+                "slug": "reports",
+                "icon": "<MdStackedLineChart/>"
+            },
+            {
+                "name": "Configuration",
+                "slug": "configuration",
+                "icon": "<MdMenuOpen/>"
+            }
+        ]
+    },
+    {
+        "contact": [
+            {
+                "name": "Contact Management",
+                "slug": "contact",
+                "icon": "<MdSupervisorAccount/>"
+            },
+            {
+                "name": "Notification",
+                "slug": "notification",
+                "icon": "<MdNotificationsActive/>"
+            },
+            {
+                "name": "Chat with Visitors",
+                "slug": "chat",
+                "icon": "<MdOutlineChatBubbleOutline/>"
+            }
+        ]
+    },
+    {
+        "setting": [
+            {
+                "name": "Application Settings",
+                "slug": "settings",
+                "icon": "<MdOutlineSettings/>"
+            },
+            {
+                "name": "Covid-19",
+                "slug": "covid19",
+                "icon": "<MdCoronavirus/>"
+            },
+            {
+                "name": "Get Technical Help",
+                "slug": "help",
+                "icon": "<MdOutlineHelp/>"
+            }
+        ]
+    }
+]
