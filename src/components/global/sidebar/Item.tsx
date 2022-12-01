@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 type Props = {
@@ -9,6 +10,9 @@ type Props = {
 
 const Item = ({ title, icon, slug, isCollapse }: Props) => {
   const location = useLocation();
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, [location.pathname]);
 
   return (
     <div>

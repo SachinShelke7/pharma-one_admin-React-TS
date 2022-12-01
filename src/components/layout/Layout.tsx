@@ -1,4 +1,3 @@
-import React, { Children } from "react";
 import Sidebar from "../global/Sidebar";
 
 interface Props {

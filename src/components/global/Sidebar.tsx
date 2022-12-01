@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import sidebarData from "../../data/sidebar.json";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import {
   MdDashboard,
   MdInventory,
@@ -18,13 +16,12 @@ import Item from "./sidebar/Item";
 import logo from "../../assets/icons/logo.svg";
 import userImg from "../../assets/images/user.jpg";
 import { IoMdArrowDropleft } from "react-icons/io";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const Sidebar = () => {
   const [isCollapse, setIsCollapse] = useState(false);
   return (
     <div
-      className={` text-white relative transform transition-all duration-[200ms] flex-1 ${
+      className={` text-white relative transform transition-all duration-[200ms] flex-1 select-none ${
         isCollapse ? "max-w-[64px]" : "max-w-[272px]"
       }`}
     >
