@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 type Props = {
@@ -9,6 +9,13 @@ type Props = {
 };
 
 const Item = ({ title, icon, slug, isCollapse }: Props) => {
+  const [count, setCount] = useState(90);
+  useEffect(() => {
+    if (count >= 99) {
+      setCount(99);
+    }
+  }, [count]);
+
   const location = useLocation();
   useEffect(() => {
     window.scroll(0, 0);
@@ -31,14 +38,14 @@ const Item = ({ title, icon, slug, isCollapse }: Props) => {
           {title}
         </p>
         {slug === "notification" ? (
-          <div>
+          <div onClick={() => setCount(count + 1)}>
             <div className="bg-red-500 " />
             <p
               className={`absolute bg-red-500 rounded-full text-[9px] px-[5px] ${
                 isCollapse ? "top-[2px] right-[1px]" : "top-5 right-6"
               }`}
             >
-              01
+              {count >= 99 ? "99+" : count}
             </p>
           </div>
         ) : null}

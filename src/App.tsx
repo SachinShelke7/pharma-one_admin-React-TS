@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/layout/Layout";
-import Dashboard from "./components/dashboard/Dashboard";
-import Inventory from "./components/inventory/Inventory";
+import { Dashboard, Inventory } from "./components";
 
 function App() {
   return (
