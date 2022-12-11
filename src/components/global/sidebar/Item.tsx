@@ -1,15 +1,26 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-type Props = {
+interface props {
   title: string;
   icon: any;
   slug: string;
   isCollapse: boolean;
-};
+  activeTab: string;
+  setActiveTab: any;
+}
 
-const Item = ({ title, icon, slug, isCollapse }: Props) => {
-  const [count, setCount] = useState(90);
+const Item = ({
+  title,
+  icon,
+  slug,
+  isCollapse,
+  activeTab,
+  setActiveTab,
+}: props) => {
+  const [count, setCount] = useState(95);
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (count >= 99) {
       setCount(99);
@@ -21,12 +32,15 @@ const Item = ({ title, icon, slug, isCollapse }: Props) => {
     window.scroll(0, 0);
   }, [location.pathname]);
 
+  const handleActiveTab = () => {
+    setActiveTab(title);
+  };
   return (
-    <div>
+    <div onClick={handleActiveTab}>
       <Link
         to={slug}
         className={`flex space-x-2 items-center pl-4 py-[13px] ${
-          location.pathname === `/${slug}` ? "bg-[#009099]" : ""
+          activeTab === title ? "bg-[#009099]" : ""
         } ${slug === "notification" ? "relative" : ""}`}
       >
         {icon}

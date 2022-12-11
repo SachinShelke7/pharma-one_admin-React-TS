@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   MdDashboard,
   MdInventory,
@@ -16,17 +16,29 @@ import Item from "./sidebar/Item";
 import logo from "../../assets/icons/logo.svg";
 import userImg from "../../assets/images/user.jpg";
 import { IoMdArrowDropleft } from "react-icons/io";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const [isCollapse, setIsCollapse] = useState(false);
+  const [activeTab, setActiveTab] = useState("Dashboard");
+  const location = useLocation();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (location.pathname === "/") {
+      navigate("/dashboard");
+    }
+  }, []);
+
   return (
     <div
-      className={` text-white relative transform transition-all duration-[200ms] flex-1 select-none ${
+      className={`text-white sticky top-0 bottom-0 transform transition-all duration-[200ms] flex-1 select-none max-h-screen overflow-y-scroll scrollbar-hide ${
         isCollapse ? "max-w-[64px]" : "max-w-[272px]"
       }`}
     >
       <div
-        className="absolute right-0 bg-[#1d242e] top-[90vh] h-10 flex items-center rounded-r-[8px] cursor-pointer"
+        className={`absolute right-0 bg-[#1d242e] top-[90vh] h-10 flex items-center  cursor-pointer ${
+          isCollapse ? "rotate-180 rounded-l-[8px]" : "rounded-r-[8px]"
+        }`}
         onClick={() => setIsCollapse(!isCollapse)}
       >
         <IoMdArrowDropleft />
@@ -39,15 +51,17 @@ const Sidebar = () => {
         <div>
           {/* first */}
           <>
-            <div
-              className={`bg-[#1d242e] ${
-                isCollapse
-                  ? "p-2"
-                  : "flex space-x-2 py-[9px] pl-[24px] items-center "
-              }`}
-            >
-              <img src={logo} alt="logo" />
-              {isCollapse ? null : <h2>Pharma One</h2>}
+            <div className="">
+              <div
+                className={`bg-[#1d242e] ${
+                  isCollapse
+                    ? "p-2"
+                    : "flex space-x-2 py-[9px] pl-[24px] items-center "
+                }`}
+              >
+                <img src={logo} alt="logo" />
+                {isCollapse ? null : <h2>Pharma One</h2>}
+              </div>
             </div>
             {/* user */}
             <div
@@ -72,24 +86,32 @@ const Sidebar = () => {
               icon={<MdDashboard />}
               slug="dashboard"
               isCollapse={isCollapse}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
             />
             <Item
               title="Inventory"
               icon={<MdInventory />}
               slug="inventory"
               isCollapse={isCollapse}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
             />
             <Item
               title="Reports"
               icon={<MdStackedLineChart />}
               slug="reports"
               isCollapse={isCollapse}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
             />
             <Item
               title="Configuration"
               icon={<MdMenuOpen />}
               slug="configuration"
               isCollapse={isCollapse}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
             />
 
             <div className="pt-2 border-b border-white" />
@@ -99,18 +121,24 @@ const Sidebar = () => {
               icon={<MdSupervisorAccount />}
               slug="contact"
               isCollapse={isCollapse}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
             />
             <Item
               title="Notification"
               icon={<MdNotificationsActive />}
               slug="notification"
               isCollapse={isCollapse}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
             />
             <Item
               title="Chat with Visitors"
               icon={<MdOutlineChatBubbleOutline />}
               slug="chat"
               isCollapse={isCollapse}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
             />
 
             <div className="pt-2 border-b border-white" />
@@ -120,18 +148,24 @@ const Sidebar = () => {
               icon={<MdOutlineSettings />}
               slug="settings"
               isCollapse={isCollapse}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
             />
             <Item
               title="Covid-19"
               icon={<MdCoronavirus />}
               slug="covid"
               isCollapse={isCollapse}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
             />
             <Item
               title="Get Technical Help"
               icon={<MdOutlineHelp />}
               slug="help"
               isCollapse={isCollapse}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
             />
           </div>
         </div>
