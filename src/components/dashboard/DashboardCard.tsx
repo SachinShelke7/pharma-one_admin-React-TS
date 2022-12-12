@@ -1,4 +1,5 @@
 import React from "react";
+import CountUp from "react-countup";
 
 type Props = {
   heading: any;
@@ -16,11 +17,15 @@ const DashboardCard = ({ heading, button }: Props) => {
       </div>
       <div className="flex">
         <div className="w-1/2 py-4 px-4">
-          <h3 className="font-bold">298</h3>
+          <h3 className="font-bold">
+            <CountUp start={0} end={298} duration={2.75}></CountUp>
+          </h3>
           <p>Total no of Medicines</p>
         </div>
         <div className="w-1/2 py-4 px-4">
-          <h3 className="font-bold">24</h3>
+          <h3 className="font-bold">
+            <CountUp start={0} end={24} duration={2.75}></CountUp>
+          </h3>
           <p>Medicine Groups</p>
         </div>
       </div>

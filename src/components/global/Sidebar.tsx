@@ -25,7 +25,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (location.pathname === "/") {
-      navigate("/dashboard");
+      navigate("dashboard");
     }
   }, []);
 

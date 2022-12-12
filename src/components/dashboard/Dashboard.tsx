@@ -4,6 +4,7 @@ import cd2 from "../../assets/images/dashboard/2.png";
 import cd3 from "../../assets/images/dashboard/3.png";
 import cd4 from "../../assets/images/dashboard/4.png";
 import DashboardCard from "./DashboardCard";
+import CountUp from "react-countup";
 
 type Props = {};
 
@@ -29,7 +30,7 @@ const index = (props: Props) => {
         />
         <Card
           icon={cd2}
-          heading="Rs. 8,55,875"
+          heading={<CountUp start={0} end={855875} duration={2.75}></CountUp>}
           detail="Revenue : Jan 2022"
           button="View Detailed Report"
           color="#FED600"
@@ -37,7 +38,7 @@ const index = (props: Props) => {
         />
         <Card
           icon={cd3}
-          heading="298"
+          heading={<CountUp start={0} end={298} duration={2.75}></CountUp>}
           detail="Medicines Available"
           button="Visit Inventory"
           bg="rgba(3, 169, 245, 0.3)"
@@ -45,7 +46,7 @@ const index = (props: Props) => {
         />
         <Card
           icon={cd4}
-          heading="01"
+          heading={<CountUp start={0} end={0o1} duration={2.75}></CountUp>}
           detail="Medicine Shortage"
           button="Resolve Now"
           color="#F0483E"

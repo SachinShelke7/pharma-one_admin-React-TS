@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 type Props = {
   icon: any;
   heading: any;
@@ -20,7 +19,7 @@ const Card = ({ icon, heading, detail, button, color, bg }: Props) => {
         <div className="flex w-full justify-center py-[19px]">
           <img src={icon} alt="heading" />
         </div>
-        <p className="text-center font-bold text-lg"> {heading}</p>
+        <p className="text-center font-bold text-lg">{heading}</p>
         <p className="text-center text-sm pt-[8px] pb-[14px]">{detail}</p>
       </div>
       <div style={{ borderTop: `1px solid ${theme}` }}>
