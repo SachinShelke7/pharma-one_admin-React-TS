@@ -1,12 +1,9 @@
 import React from "react";
 import CountUp from "react-countup";
 
-type Props = {
-  heading: any;
-  button: any;
-};
+type Props = {};
 
-const DashboardCard = ({ heading, button }: Props) => {
+const DashboardCard = (props: Props) => {
   return (
     <div className="border">
       <div className="border-b">
