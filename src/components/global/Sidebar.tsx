@@ -32,7 +32,7 @@ const Sidebar = () => {
   return (
     <div
       className={`text-white sticky top-0 bottom-0 transform transition-all duration-[200ms] flex-1 select-none max-h-screen overflow-y-scroll scrollbar-hide ${
-        isCollapse ? "max-w-[64px]" : "max-w-[272px]"
+        isCollapse ? "min-w-[64px] max-w-[64px]" : "min-w-[272px] max-w-[272px]"
       }`}
     >
       <div
